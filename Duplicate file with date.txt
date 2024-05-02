@@ -1,0 +1,14 @@
+#PS
+$currentDate = Get-Date -Format 'yy-MM-dd-HH-mm'
+#$fileName = { $_.BaseName + '_' + $currentDate + $_.extension}
+#$prevFileName = 'z'
+$prevFileName = {Get-Item $Sel}
+$fileName = $prevFileName + '_' + $currentDate
+$newFileName = { $_.BaseName + '_' + $currentDate + $_.extension}
+#$newFileName = {$CurrentDir$fileName}
+#$selectedItem = {Get-Item $Sel}
+#$fileExtension = $CurrentDir::GetExtension($args[0])
+#Copy-Item Z:\TESTNG_H\$selectedItem -Destination Z:\TESTNG_H\frd\file.txt
+#Get-Item $Sel | Copy-Item -Destination Z:\TESTNG_H\frd\
+#Get-Item $Sel | Copy-Item -Destination Z:\TESTNG_H\$fileName
+Get-Item $Sel | Copy-Item -Destination $newFileName

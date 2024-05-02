@@ -1,0 +1,4 @@
+#PS
+$currentDate = Get-Date -Format 'yy-MM-dd-HH-mm'
+$newFileName = { $_.BaseName + '_' + $currentDate + $_.extension}
+Get-Item $Sel | ren -NewName $newFileName
