@@ -1,0 +1,6 @@
+#PS
+try {
+    Get-ChildItem -Path $CurrentDir | Where-Object { $_.GetFileSystemInfos().Count -eq 0 } | Remove-Item
+} catch {
+    Write-Host "An error occurred: $_"
+}
