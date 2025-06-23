@@ -1,0 +1,3 @@
+#PS
+$newFileName = { $_.BaseName + '_' + $_.extension}
+Get-Item $Sel | Copy-Item -Destination $newFileName
